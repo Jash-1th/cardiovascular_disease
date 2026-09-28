@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('home')}}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('model')}}">Model</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{{url_for('prediction')}}">Prediction</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('index')}}">Logout</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+<div style="background-image: url('/static/images/p3.jpg'); background-size: cover; background-position: center; color: #fff; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+    <div style="background-color: rgba(0, 0, 0, 0.7); padding: 40px; border-radius: 12px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); width: 700px;">
+        <center>
+            <h4 style="margin-bottom: 10px; color: #ccc;">Cardiovascular Disease Prediction with Deep Learning</h4>
+            
+            {% if result %}
+                <h3 style="color: lightgreen;">Prediction: {{ result }}</h3>
+            {% endif %}
+            <h2 style="margin-bottom: 30px; color: #fff;">Prediction Form</h2>
+
+            <form action="{{ url_for('prediction') }}" method="post" style="width: 100%;">
+
+                <!-- Dropdown for Gender -->
+                <select name="gender" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Gender</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+
+                <!-- Input for Height -->
+                <input type="number" name="height" placeholder="Enter Height (cm)" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                
+                <!-- Input for Weight -->
+                <input type="number" name="weight" placeholder="Enter Weight (kg)" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                
+                <!-- Input for Systolic Pressure -->
+                <input type="number" name="ap_hi" placeholder="Enter Systolic Pressure (ap_hi)" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                
+                <!-- Input for Diastolic Pressure -->
+                <input type="number" name="ap_lo" placeholder="Enter Diastolic Pressure (ap_lo)" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                
+                <!-- Dropdown for Cholesterol -->
+                <select name="cholesterol" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Cholesterol Level</option>
+                    <option value="1">Normal</option>
+                    <option value="2">Above Normal</option>
+                    <option value="3">Well Above Normal</option>
+                </select>
+                
+                <!-- Dropdown for Glucose -->
+                <select name="gluc" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Glucose Level</option>
+                    <option value="1">Normal</option>
+                    <option value="2">Above Normal</option>
+                    <option value="3">Well Above Normal</option>
+                </select>
+
+                <!-- Dropdown for Smoking -->
+                <select name="smoke" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Smoking Status</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <!-- Dropdown for Alcohol -->
+                <select name="alco" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Alcohol Consumption</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
+                <!-- Dropdown for Activity Level -->
+                <select name="active" required class="form-control mb-3" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+                    <option value="">Select Activity Level</option>
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
+
+                <button type="submit" class="btn btn-success mt-4" style="width: 100%; border-radius: 5px;">Submit</button>
+            </form>
+        </center>
+    </div>
+</div>
+{% endblock %}

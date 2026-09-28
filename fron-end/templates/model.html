@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+
+{% block extra_styles %}
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Improving Cardiovascular Disease Prediction With Deep Learning and Correlation Aware SMOTE</title>
+
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/fontawesome.css">
+<link rel="stylesheet" href="/static/css/templatemo-tale-seo-agency.css">
+<link rel="stylesheet" href="/static/css/owl.css">
+<link rel="stylesheet" href="/static/css/animate.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<style>
+    body {
+        background-image: url("/static/images/p2.jpg");background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block navbar %}
+<li class="nav-item"><a class="nav-link" href="{{url_for('home')}}">Home</a></li>
+<li class="nav-item"><a class="nav-link active" href="{{url_for('model')}}">Model</a></li>
+<li class="nav-item"><a class="nav-link" href="{{url_for('prediction')}}">Prediction</a></li>
+<li class="nav-item"><a class="nav-link" href="{{url_for('index')}}">Logout</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+    <div class="container">
+        <div style="margin-top: -50px; background-color: rgba(0, 0, 0, 0.288);" class="row">
+            <form action="{{url_for('model')}}" method="post" enctype="multipart/form-data">
+                <center>
+                    <div class="col-lg-7 align-self-center">
+                        <div class="caption header-text"><br><br>
+                            <h4>MODEL TRAINING</h4>
+                            {% if msg %}
+                                <h5 style="color: rgb(234, 243, 234);">{{ msg }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;" class="col-12">
+                        <div class="main-button">
+                            <select class="form-select" name="algo" style="width: 430px;">
+                                <option hidden value="0">Select an Algorithm</option>
+                                <option value="1">Stacking Classifier</option>
+                                <option value="2">XGBoost Classifier</option>
+                                <option value="3">Random Forest Classifier</option>
+                                <option value="4">Convolutional Neural Network (CNN)</option>
+                                <option value="5">Long Short-Term Memory (LSTM)</option>
+                                <option value="6">Recurrent Neural Network (RNN)</option>
+                                <option value="7">Gated Recurrent Unit (GRU)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;" class="col-12">
+                        <div class="main-button">
+                            <button class="btn btn-success" type="submit" style="width: 430px;">Submit</button><br><br><br><br>
+                        </div>
+                    </div>
+
+                    {% if path %}
+                        <div class="col-12">
+                            <h2>Prediction : {{ prediction }}</h2><br>
+                        </div>
+                    {% endif %}
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% if message %}
+<script>alert("{{ message }}")</script>
+{% endif %}
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/isotope.min.js"></script>
+<script src="/static/js/owl-carousel.js"></script>
+<script src="/static/js/tabs.js"></script>
+<script src="/static/js/popup.js"></script>
+<script src="/static/js/custom.js"></script>
+
+</body>
+</html>

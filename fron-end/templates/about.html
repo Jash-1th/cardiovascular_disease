@@ -1,0 +1,126 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('index')}}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{{url_for('about')}}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('register')}}">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url_for('login')}}">Login</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+<section class="about section-padding">s
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 text-center">
+                <h2 class="mb-5"> Cardiovascular Disease Prediction  Expert System </h2>
+            </div>
+
+            <div class="col-lg-2 col-12 mt-auto mb-auto">
+                <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Introduction</button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#pills-youtube" type="button" role="tab" aria-controls="pills-youtube" aria-selected="true">Statement about the Problem</button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="false">Objective of the Project</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 col-12">
+                <div class="tab-content mt-2" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <img src="/static/images/p4.jpg" class="img-fluid" alt="">
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h5 class="mb-3">Cardiovascular   <span>Disease Prediction</span></h5>
+
+                                    <p>
+                                        Cardiovascular diseases (CVDs) remain a major global health threat, contributing significantly to mortality and disability rates. Accurate and early risk prediction is essential for preventive healthcare. This research emphasizes the application of deep learning-based stacking classifiers to improve clinical decision-making and enhance personalized treatment strategies using structured medical data. </p>
+
+                                    <div class="mt-2 mt-lg-auto">
+                                        <a href="about.html" class="custom-link mb-2">
+                                            Learn more about us
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-youtube" role="tabpanel" aria-labelledby="pills-youtube-tab">
+
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <div class="ratio ratio-16x9">
+                                    <img src="/static/images/p4.jpg" title="medic.jpg" class="img-fluid" allowfullscreen></img>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3"> Problem Statement </h4>
+
+                                    <p>Traditional single-model classifiers often fail to detect complex cardiovascular disease patterns, leading to suboptimal risk prediction and delayed diagnosis. There is a need for advanced ensemble methods that can integrate diverse learning capabilities to improve the reliability and accuracy of cardiovascular risk assessment, especially with structured clinical datasets.</p>
+                                    <!-- <div class="mt-2 mt-lg-auto">
+                                        <a href="contact.html" class="custom-link mb-2">
+                                            Work with us
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-skill" role="tabpanel" aria-labelledby="pills-skill-tab">
+                        <div class="row">
+                            <div class="col-lg-7 col-12">
+                                <img src="/static/images/p6.avif" class="img-fluid" alt="">
+                            </div>
+
+                            <div class="col-lg-5 col-12">
+                                <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                    <h4 class="mb-3">Objective of the Project</h4>
+
+                                    <p>The main objective is to develop a stacking ensemble model combining multiple classifiers—including XGBoost—for effective cardiovascular disease prediction. The goal is to improve model accuracy, precision, recall, and F1-score through ensemble learning, ultimately contributing to the development of clinical decision support systems and personalized patient care approaches.</p>
+
+                                    </div>
+                                    
+                                    <!-- <div class="mt-2 mt-lg-auto">
+                                        <a href="products.html" class="custom-link mb-2">
+                                            Explore products
+                                            <i class="bi-arrow-right ms-2"></i>
+                                        </a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

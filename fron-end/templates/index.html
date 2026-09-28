@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Cardiovascular Disease Prediction</title>
+        
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="/static/css/slick.css"/>
+
+        <link href="/static/css/tooplate-little-fashion.css" rel="stylesheet">
+
+        {% block extra_styles %}
+        {% endblock %}
+<!--
+
+Tooplate 2127 Little Fashion
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
+    </head>
+    
+    <body>
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+    
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="{{url_for('index')}}">
+                        <strong><span>Improving Cardiovascular Disease Prediction 
+
+                    </a>
+
+                    <!-- <div class="d-lg-none">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                    </div> -->
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            {% block navbar %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{url_for('index')}}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('about')}}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('register')}}">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                                </li>
+                            {% endblock %}
+                        </ul>
+
+                    
+                    </div>
+                </div>
+            </nav>
+
+            {% block content %}
+                <section class="slick-slideshow">   
+                    <div class="slick-custom">
+                        <img src="/static/images/p1.webp" class="img-fluid" alt="">
+
+                        <div class="slick-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-10 col-8">
+                                        <h1 class="slick-title">Cardiovascular Disease Prediction </h1>
+
+                                        <p class="lead text-white mt-lg-3 mb-lg-5">Improving Cardiovascular Disease Prediction With Deep Learning and Correlation Aware SMOTE </p>
+
+                                        <a href="{{url_for('register')}}" class="btn custom-btn">Regsiter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endblock %}
+
+        {% if message %}
+                <script>
+                    alert("{{message}}")
+                </script>
+        {% endif %}
+
+          
+        <!-- JAVASCRIPT FILES -->
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/Headroom.js"></script>
+        <script src="/static/js/jQuery.headroom.js"></script>
+        <script src="/static/js/slick.min.js"></script>
+        <script src="/static/js/custom.js"></script>
+
+    </body>
+</html>
